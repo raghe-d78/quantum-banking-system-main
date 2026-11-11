@@ -1,0 +1,25 @@
+{
+  "name": "ledger-service",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "jest tests/unit tests/api",
+    "test:coverage": "jest tests/unit tests/api --coverage --collectCoverageFrom=src/**/*.js --coveragePathIgnorePatterns=src/server.js"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "moduleNameMapper": { "^/shared/(.*)$": "<rootDir>/../../shared/$1" }
+  },
+  "dependencies": {
+    "decimal.js": "^10.4.3",
+    "express": "^4.19.0",
+    "jsonwebtoken": "^9.0.0",
+    "pg": "^8.20.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "supertest": "^6.0.0"
+  }
+}
